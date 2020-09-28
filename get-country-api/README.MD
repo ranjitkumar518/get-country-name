@@ -1,7 +1,7 @@
 # get-country-name
 
 ## dependencies for API and containerization
--> Python >= 3.3, Flask >= 0.12 and py-healthcheck
+-> Python >= 3.3, Flask >= 0.12, stringcase and py-healthcheck
 
 ## dependencies for API containerization and Orchestration
 -> Docker and Kubernetes

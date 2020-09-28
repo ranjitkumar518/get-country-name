@@ -6,10 +6,11 @@ import urllib.request as request
 from flask import Flask
 from healthcheck import HealthCheck, EnvironmentDump
 from http import HTTPStatus
+import stringcase
 
 api = Flask(__name__)
 healthcheck = HealthCheck()
-env_dump = EnvironmentDump()
+# env_dump = EnvironmentDump()
 
 @api.route('/', defaults={'path': ''})
 @api.route('/<path:path>')
@@ -62,10 +63,13 @@ def fetchApiResponse():
 		else:
 			print('Error:  Failed to fetchdata from API. Please use the working API')
 
+
 ## Parse data.json file to filter data by country name and return country code
 def getCountryCode(country):
 	with open('data.json', 'r') as content:
 		data = json.load(content)
+		# country = country.title()
+		country = stringcase.sentencecase(country) # Convert country name to sentencecase
 		if country in data:
 			result = data[country]
 		else:
