@@ -7,7 +7,7 @@
 -> Docker and Kubernetes
 
 ## Execution step to build docker image
-docker build -t get-country-code:latest
+docker build -t get-country-code:latest .
 
 ## Execution step for Kubernetes deployment YAML
 
