@@ -23,4 +23,4 @@ Country name for country code LR is Liberia
 Country code USA was not found. Please pass valid country code
 
 ## Get country name application
-https://github.com/ranjitkumar518/get-country-name/tree/master/fetch-country-api
+https://github.com/ranjitkumar518/get-country-code/tree/master/get-country-api

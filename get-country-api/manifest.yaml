@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: get-country-name
+  name: get-country-code
 spec:
   selector:
-    app: get-country-name
+    app: get-country-code
   ports:
   - port: 8001
     targetPort: 8000
@@ -14,20 +14,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: get-country-name
+  name: get-country-code
 spec:
   selector:
     matchLabels:
-      app: get-country-name
+      app: get-country-code
   replicas: 4
   template:
     metadata:
       labels:
-        app: get-country-name
+        app: get-country-code
     spec:
       containers:
-      - name: get-country-name
-        image: ranjitkumar518/get-country-name:latest
+      - name: get-country-code
+        image: ranjitkumar518/get-country-code:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000

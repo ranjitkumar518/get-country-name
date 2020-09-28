@@ -3,4 +3,4 @@ MAINTAINER Ranjit Kumar "ranjitkumarg66@gmail.com"
 WORKDIR /app
 ADD . /app
 RUN pip install -r pre-requirements.txt
-CMD ["python","fetch-countyname.py"]
+CMD ["python","get-county-code.py"]
