@@ -22,5 +22,5 @@ Country name for country code IN is India
 Country name for country code LR is Liberia
 Country code USA was not found. Please pass valid country code
 
-## Fetch Country application
+## Get country name application
 cd ./fetch-country-api
