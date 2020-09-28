@@ -1,16 +1,11 @@
-import sys
-import json
-import requests
-import urllib
+import sys, json, requests, urllib, string, stringcase
 import urllib.request as request
 from flask import Flask
-from healthcheck import HealthCheck, EnvironmentDump
+from healthcheck import EnvironmentDump, HealthCheck
 from http import HTTPStatus
-import stringcase
 
 api = Flask(__name__)
 healthcheck = HealthCheck()
-# env_dump = EnvironmentDump()
 
 @api.route('/', defaults={'path': ''})
 @api.route('/<path:path>')
@@ -68,8 +63,8 @@ def fetchApiResponse():
 def getCountryCode(country):
 	with open('data.json', 'r') as content:
 		data = json.load(content)
-		# country = country.title()
-		country = stringcase.sentencecase(country) # Convert country name to sentencecase
+		country = string.capwords(country)
+		#country = stringcase.sentencecase("country") # Convert country name to sentencecase
 		if country in data:
 			result = data[country]
 		else:
