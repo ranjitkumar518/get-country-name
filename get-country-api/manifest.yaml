@@ -6,8 +6,8 @@ spec:
   selector:
     app: get-country-code
   ports:
-  - port: 8001
-    targetPort: 8000
+  - port: 8000
+    targetPort: 5000
   type: LoadBalancer
 
 ---
@@ -19,7 +19,7 @@ spec:
   selector:
     matchLabels:
       app: get-country-code
-  replicas: 4
+  replicas: 1
   template:
     metadata:
       labels:
@@ -30,4 +30,4 @@ spec:
         image: ranjitkumar518/get-country-code:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8000
+        - containerPort: 5000
